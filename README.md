@@ -6,30 +6,39 @@ This layer installs the binaries needed to perform certification testing on the 
 SUPPORTED PLATFORMS
 -------------------
 
-  * Digi ConnectCore 6UL Family
-    * CC6UL SBC Pro
-      * [Digi P/N CC-WMX6UL-KIT](https://www.digi.com/products/embedded-systems/single-board-computers/connectcore-for-i-mx6ul-sbc-pro)
-    * CC6UL SBC Express
-      * [Digi P/N CC-WMX6UL-EXPRESS](https://www.digi.com/products/embedded-systems/single-board-computers/connectcore-for-i-mx6ul-sbc-express)     
+This layer supports ALL ConnectCore 6 family SBC and SOM variants possessing the Qualcomm QCA6564 wireless radio.
 
+  * ConnectCore 6N
+  * ConnectCore 6UL
+  * ConnectCore 6Plus
+
+The original ConnectCore 6 (SBC/SOM) with the Atheros AR62xx wireless radio is NOT supported.
+
+This layer has been tested against the following Digi Embedded Yocto (DEY) releases.
+
+  * dey-3.2 (gatesgarth)
+  * dey-3.0 (zeus)
+  * dey-2.6 (thud)
+  * dey-2.4 (rocko)
+  * dey-2.2 (morty)
+  * dey-2.0 (jethro)
+  * dey-1.6 (daisy)
 
 INSTALLATION
 ------------
 
-1. Install Digi Embedded Yocto (DEY) distribution (dey-2.4-r2).
+1. Install Digi Embedded Yocto (DEY), per the published instructions.
 
-    https://github.com/digi-embedded/dey-manifest#installing-digi-embedded-yocto
 
-2. Clone the *cert-tools* Yocto layer under the Digi Embedded Yocto source
-   directory.
+2. Clone meta-cert-tool layer to your local workstation.
 
         #> cd <DEY-INSTALLDIR>/sources
-        #> git clone https://stash.digi.com/scm/~cameronh/meta-cert-tools.git -b rocko
+        #> git clone https://github.com/chaegle/meta-cert-tools.git
 
 CREATE AND BUILD A PROJECT
 --------------------------
 
-1. Create a project for your ConnectCore 6UL target platform.
+1. Create a project for your ConnectCore 6[N|UL|Plus] target platform.
 
         #> mkdir <project-dir>
         #> cd <project-dir>
@@ -38,7 +47,7 @@ CREATE AND BUILD A PROJECT
 2. Add the *cert-tools* layer to the project's *bblayers.conf*
   configuration file.
 
-        #> bitbake-layers add-layer <DEY-INSTALLDIR>/sources/cert-tools
+        #> bitbake-layers add-layer <DEY-INSTALLDIR>/sources/meta-cert-tools
 
 3. Edit the project's local.conf, adding the below line.
 
