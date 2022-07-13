@@ -11,6 +11,7 @@ This layer supports ALL ConnectCore 6 family SBC and SOM variants possessing the
   * ConnectCore 6N
   * ConnectCore 6UL
   * ConnectCore 6Plus
+  * ConnectCard for i.MX28N (dey-1.6 ONLY)
 
 The original ConnectCore 6 (SBC/SOM) with the Atheros AR62xx wireless radio is NOT supported.
 
