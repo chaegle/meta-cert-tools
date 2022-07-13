@@ -21,5 +21,5 @@ do_install() {
 
 INSANE_SKIP_${PN}_append = "already-stripped"
 
-COMPATIBLE_MACHINE = "(ccimx6$|ccimx6ul)"
+COMPATIBLE_MACHINE = "(ccardimx28|ccimx6$|ccimx6ul)"
 
